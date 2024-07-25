@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&family=Wix+Madefor+Display:wght@400..800&display=swap');
 
+@font-face {
+    font-family: "Cascadia Mono, Regular";
+    src: url(../fonts/CascadiaCode-2404.23/otf/static/CascadiaMono-Regular.otf);
+}
+
+@font-face {
+    font-family: "Cascadia Mono, Bold";
+    src: url(../fonts/CascadiaCode-2404.23/otf/static/CascadiaMono-Bold.otf);
+}
+
 /* 
 .wix-madefor-display-<uniquifier> {
   font-family: "Wix Madefor Display", sans-serif;
@@ -115,15 +125,20 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 2;
+    height: 2rem;
 }
 
 .mainNav {
     display: flex;
     justify-content: space-evenly;
     border-radius: 40px 40px 40px 40px;
-    border: 2px solid var(--GreenNeon);
+    border: 3px solid var(--GreenNeon);
     margin: 0px 230px;
     margin-top: 10px;
+    position: relative;
+    top: 3px;
+    background-color: #1F1F1F;
 }
 
 .mainNav a {
@@ -142,30 +157,29 @@ header {
     opacity: unset;
 }
 
+.mainNav li {
+    list-style-type: none;
+    text-align: center;
+    background-color: #1F1F1F;
+}
 
 .mainNav .activeNav {
     color: var(--SnowWhite);
     opacity: unset;
     font-weight: bold;
-}
-
-.mainNav li {
-    list-style-type: none;
-    text-align: center;
-}
-
-.mainNav .activeNav:after {
-    background: var(--PinkNeon);
-    position: absolute;
-    content: '';
-    width: 100%;
+    background-color: var(--PinkNeon);
+    width: 200px;
     height: 100%;
     top: 0;
     left: 0;
     transform: skew(-20deg);
-    z-index: -1;
 }
 
+.mainNav .activeNav a {
+    transform: skew(20deg);
+    color: var(--SnowWhite);
+    opacity: unset;
+}
 
 .sideNav {
     background-color: var(--GreenNeon);
@@ -195,7 +209,7 @@ header {
     padding: 0px 0px 0px 10px;
 }
 
-main {
+.mainFrontpage {
     position: relative;
 }
 
@@ -214,8 +228,9 @@ main {
 }
 
 
-.mainSection {
-    position: relative;
+
+.mainSection p {
+    color: white;
 }
 
 .mainSection h3 {
@@ -226,9 +241,17 @@ main {
 
 .textArea {
     position: absolute;
-    margin: 100px 50px;
+    margin: 60px 50px;
 }
 
+.introductionText {
+    position: absolute;
+    margin: 0px 50px;
+    margin-top: 300px;
+    font-family: "Cascadia Mono, Regular";
+    display: flex;
+    align-items: center;
+}
 
 .smallTriangle {
     position: absolute;
@@ -236,7 +259,7 @@ main {
     top: 100px;
     width: 58%;
     /* Juster bredden */
-    height: 96vh;
+    height: 92vh;
     /* Juster højden */
     background: linear-gradient(to bottom left, var(--GreenNeon) 0%, var(--GreenNeon) 40%, #1F1F1F 80%, #1F1F1F 100%);
     clip-path: polygon(0 100%, 100% 100%, 100% 0);
@@ -248,7 +271,7 @@ main {
     top: 80px;
     width: 58%;
     /* Juster bredden */
-    height: 96vh;
+    height: 92vh;
     /* Juster højden */
     background: linear-gradient(to bottom left, var(--PinkNeon) 0%, var(--PinkNeon) 40%, #1F1F1F 80%, #1F1F1F 100%);
     clip-path: polygon(0 100%, 100% 100%, 100% 0);
@@ -261,8 +284,61 @@ main {
     bottom: 0;
     width: 58%;
     /* Juster bredden */
-    height: 96vh;
+    height: 92vh;
     /* Juster højden */
     background: linear-gradient(to bottom left, #02F3FF 0%, #02F3FF 40%, #1F1F1F 80%, #1F1F1F 100%);
     clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.profilBillede {
+    height: 92vh;
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+
+
+
+
+.line {
+    width: 1px;
+    background-color: #707070;
+    height: 420px;
+    /* Juster højden efter behov */
+    margin-right: 20px;
+    /* Juster afstand mellem paragraffer */
+}
+
+.step1 {
+    height: 420px;
+}
+
+.step2 {
+    height: 336px;
+}
+
+.darkBlueColor {
+    color: #7299CC;
+}
+
+.grayColor {
+    color: #818181;
+}
+
+.yellowColor {
+    color: #DBB445;
+}
+
+.lightBlueColor {
+    color: #9DC8E5;
+}
+
+.brownColor {
+    color: #B4876F;
+}
+
+.bodyTag,
+.divTag {
+    font-size: 15px;
 }

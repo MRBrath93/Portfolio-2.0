@@ -22,9 +22,13 @@
 
 /* Variables */
 :root {
-    --DarkGrey: #a5A5A5;
+    --DarkGrey: #373737;
+    --SnowWhite: #FCFCFC;
     --GreenNeon: #14FE9B;
+    --LightLakeGreen: #BBCDAB;
     --PinkNeon: #D44DE6;
+    --TekoFont: "Teko", sans-serif;
+    --WixFont: "Wix Madefor Display", sans-serif;
 
     /* Angiv vairabler så som farver, størrelser på margin, padding osv. */
 }
@@ -47,7 +51,10 @@ body {
     background-color: #1F1F1F;
     background-size: 100%;
     background-repeat: no-repeat;
+}
 
+.frontpage {
+    background-image: radial-gradient(closest-side at 30% 50%, #40694D, #1F1F1F);
 }
 
 img,
@@ -74,17 +81,19 @@ h6 {
 }
 
 h1 {
-    color: white;
-    font-size: 120px;
+    color: var(--SnowWhite);
+    font-size: 100px;
+    font-family: var(--WixFont);
+    font-weight: 800;
 }
 
 h2 {
-    color: #14FE9B;
+    color: var(--GreenNeon);
     font-size: 100px;
 }
 
 h3 {
-    font-size: 60px;
+    font-size: 50px;
 }
 
 
@@ -101,11 +110,18 @@ p {
     }
 }
 
+header {
+    background-color: #1F1F1F;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .mainNav {
     display: flex;
     justify-content: space-evenly;
     border-radius: 40px 40px 40px 40px;
-    border: 2px solid #14FE9B;
+    border: 2px solid var(--GreenNeon);
     margin: 0px 230px;
     margin-top: 10px;
 }
@@ -118,17 +134,17 @@ p {
     position: relative;
     display: inline-block;
     font-size: 25px;
-    font-family: "Wix Madefor Display", sans-serif;
+    font-family: var(--WixFont);
 }
 
 .mainNav a:hover {
-    color: white;
+    color: var(--SnowWhite);
     opacity: unset;
 }
 
 
 .mainNav .activeNav {
-    color: white;
+    color: var(--SnowWhite);
     opacity: unset;
     font-weight: bold;
 }
@@ -139,7 +155,7 @@ p {
 }
 
 .mainNav .activeNav:after {
-    background: #D44DE6;
+    background: var(--PinkNeon);
     position: absolute;
     content: '';
     width: 100%;
@@ -152,27 +168,26 @@ p {
 
 
 .sideNav {
-    background-color: #14FE9B;
+    background-color: var(--GreenNeon);
     padding: 3rem 1rem 4rem 0rem;
     border-radius: 0px 10px 10px 0px;
 }
 
 .sideNav a {
     text-decoration: none;
-
     color: #373737;
 }
 
 .sideNav li {
     list-style-type: none;
     font-size: 18px;
-    font-family: "Wix Madefor Display", sans-serif;
+    font-family: var(--WixFont);
 }
 
 .sideNav>ul>li {
     font-weight: bold;
     font-size: 20px;
-    font-family: "Wix Madefor Display", sans-serif;
+    font-family: var(--WixFont);
     margin: 0.5rem 0rem;
 }
 
@@ -184,8 +199,7 @@ main {
     position: relative;
 }
 
-main>section {
-
+.caseStudy {
     margin-left: 230px;
 }
 
@@ -197,4 +211,58 @@ main>section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+
+.mainSection {
+    position: relative;
+}
+
+.mainSection h3 {
+    font-weight: 800;
+    color: var(--SnowWhite);
+    font-family: var(--WixFont);
+}
+
+.textArea {
+    position: absolute;
+    margin: 100px 50px;
+}
+
+
+.smallTriangle {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 58%;
+    /* Juster bredden */
+    height: 96vh;
+    /* Juster højden */
+    background: linear-gradient(to bottom left, var(--GreenNeon) 0%, var(--GreenNeon) 40%, #1F1F1F 80%, #1F1F1F 100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.mediumTriangle {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    width: 58%;
+    /* Juster bredden */
+    height: 96vh;
+    /* Juster højden */
+    background: linear-gradient(to bottom left, var(--PinkNeon) 0%, var(--PinkNeon) 40%, #1F1F1F 80%, #1F1F1F 100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.largeTriangle {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    width: 58%;
+    /* Juster bredden */
+    height: 96vh;
+    /* Juster højden */
+    background: linear-gradient(to bottom left, #02F3FF 0%, #02F3FF 40%, #1F1F1F 80%, #1F1F1F 100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
 }
